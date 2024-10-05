@@ -1,0 +1,787 @@
+fileFormatVersion: 2
+guid: 3db0b98aea2b4cc4f8dd1e691db7ea94
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 650
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hikari_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7705
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58d8d23aac974234180f933b3a48113b
+      internalID: -533370347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 7705
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8197214c34ec87d44923220c5b066d53
+      internalID: 1114989082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 7705
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 599e5a66626e0b54d81e10c9d06ec546
+      internalID: -1602361597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 7705
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99327f7c146f21a44b0ae6c74dd61d1e
+      internalID: -580949164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 7705
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d690b30aad737b4b9907c8ff71b82b6
+      internalID: -1882172926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6164
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b6f67d3287cb6c43a78950109a6397a
+      internalID: 1656140302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 6164
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a254c62e2299dda47afe853f6c7bf6ee
+      internalID: -54000323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 6164
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ec985a61b42bd4e8038c94c7d850a3
+      internalID: -252415608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_8
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 6164
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfdeffdeb3d8a9446a98925ed512e6ab
+      internalID: 1618378004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_9
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 6164
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90963087350799c47abb1e3aed76daf8
+      internalID: 1157668971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4623
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8794f438d34a0e43991c0fc2b3baeaa
+      internalID: -1713876380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_11
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 4623
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdffec3a637969146a607515b08829a7
+      internalID: 1553062767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_12
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 4623
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61073ebf1a19d0c4487e39d1cad7f0e9
+      internalID: 959356519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_13
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 4623
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7865e41efe2c3c342af6c0db7940aa6d
+      internalID: -1928407463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_14
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 4623
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f0736dadaac7354fa3c1f1868f60698
+      internalID: 1519444568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3082
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2bbdf1e41c9a3442bfe72f344fd716b
+      internalID: -1309771987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_16
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3082
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38639e2bb10cdfe46818b740826167b7
+      internalID: 702700330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_17
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 3082
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2973a8192dc2be94b85a33e59415eb44
+      internalID: 134536062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_18
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 3082
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcfebf46f480a354faa20202273d9299
+      internalID: -1824988865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_19
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 3082
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15799761261ed8842a3664411f7d6a69
+      internalID: 1239866604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1541
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08aa67ef02c7a4a4186642a6b84e95cc
+      internalID: -577032410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_21
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1541
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed484a3fdb8463c4c91ebbab8a5494fc
+      internalID: 1446932847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_22
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1541
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb9b457800549a54b9be9fbc73291959
+      internalID: -550538132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_23
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 1541
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfd1e3701fb0a4543bb1578d47b1b10f
+      internalID: 723811317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_24
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 1541
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e2d753e456702946ab7989730fed1f3
+      internalID: -2081869119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca54adc98a511484c85e93e485adbb66
+      internalID: -890779472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_26
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 195929613956145428b60947a3e70492
+      internalID: 1980473566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_27
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3227ee89e00573448b76863d21016326
+      internalID: 1701812411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_28
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd2ac15d71e8b594eab5298e9dfb9bd1
+      internalID: 893607361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hikari_Idle_29
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 0
+        width: 1024
+        height: 1541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9ebf4627329d6946b9e272400e4a5bb
+      internalID: 1346164373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 938b1529e23d7c24291b40d35b9b1f14
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Hikari_Idle_0: -533370347
+      Hikari_Idle_1: 1114989082
+      Hikari_Idle_10: -1713876380
+      Hikari_Idle_11: 1553062767
+      Hikari_Idle_12: 959356519
+      Hikari_Idle_13: -1928407463
+      Hikari_Idle_14: 1519444568
+      Hikari_Idle_15: -1309771987
+      Hikari_Idle_16: 702700330
+      Hikari_Idle_17: 134536062
+      Hikari_Idle_18: -1824988865
+      Hikari_Idle_19: 1239866604
+      Hikari_Idle_2: -1602361597
+      Hikari_Idle_20: -577032410
+      Hikari_Idle_21: 1446932847
+      Hikari_Idle_22: -550538132
+      Hikari_Idle_23: 723811317
+      Hikari_Idle_24: -2081869119
+      Hikari_Idle_25: -890779472
+      Hikari_Idle_26: 1980473566
+      Hikari_Idle_27: 1701812411
+      Hikari_Idle_28: 893607361
+      Hikari_Idle_29: 1346164373
+      Hikari_Idle_3: -580949164
+      Hikari_Idle_4: -1882172926
+      Hikari_Idle_5: 1656140302
+      Hikari_Idle_6: -54000323
+      Hikari_Idle_7: -252415608
+      Hikari_Idle_8: 1618378004
+      Hikari_Idle_9: 1157668971
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

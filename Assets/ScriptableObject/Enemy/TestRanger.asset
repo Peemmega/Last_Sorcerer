@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc36b6180cc401045aea72206533fa0b, type: 3}
+  m_Name: TestRanger
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  maxHealth: 50
+  damage: 5
+  attackCD: 1.5
+  atkRange: 10
+  chargeDuration: 1
+  hitboxDuration: 2
+  findTargetRange: 10
+  e_Class: Ranger
+  hitBox: {fileID: 653323244208137620, guid: c37888fa4109982498e14a325138330d, type: 3}
