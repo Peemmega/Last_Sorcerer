@@ -18,11 +18,6 @@ public class DayNightCycle : MonoBehaviour
 
     private void Update()
     {
-        //timeOfDay += Time.deltaTime * sunRotationSpeed;
-        if (timeOfDay > 24)
-        {
-            timeOfDay = 0;
-        }
         UpdateSunRotation();
         UpdateLighting();
     }
@@ -36,6 +31,8 @@ public class DayNightCycle : MonoBehaviour
     {
         float sunRotate = Mathf.Lerp(-90, 270, timeOfDay / 24);
         sun.transform.rotation = Quaternion.Euler(sunRotate, 40, sun.transform.rotation.z);
+        sun.transform.GetComponent <Light>().shadowStrength = (((timeOfDay - 6) / 4) * 0.8f);
+
     }
 
     private void UpdateLighting()
