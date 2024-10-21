@@ -6,12 +6,13 @@ public class MeleeWeapon : MonoBehaviour
 {
     public WeaponScriptableObject data;
     GameObject hitbox;
-    public float cd;
-
+    float cd;
+    float lifeTime;
     void Start()
     {
         hitbox = data.weaponPrefab;
         cd = data.cd;
+        lifeTime = data.lifeTime;
     }
 
     public GameObject GetHitbox()
@@ -19,5 +20,13 @@ public class MeleeWeapon : MonoBehaviour
         return hitbox;
     }
 
- 
+    public float GetCD()
+    {
+        return cd;
+    }
+
+    public float GetHitboxLifeTime()
+    {
+        return lifeTime;
+    }
 }

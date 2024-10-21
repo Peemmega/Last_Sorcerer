@@ -82,7 +82,8 @@ public class PickUpController : MonoBehaviour
             rb.AddForce(dropDirection * dropForwardForce, ForceMode.Impulse);
             rb.AddForce(new Vector3(0,dropUpwardForce, 0), ForceMode.Impulse);
         }
-
+       
+        transform.localScale = new Vector3(0.5f,0.5f,0.5f);
         player.GetComponent<PlayerAction>().DropItem(transform.gameObject);
     }
 }

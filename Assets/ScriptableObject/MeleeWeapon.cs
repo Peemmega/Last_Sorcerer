@@ -16,5 +16,7 @@ public class WeaponScriptableObject : ScriptableObject
 
     public float cd;
     public float CD { get => cd; private set => cd = value; }
-
+   
+    public float lifeTime;
+    public float LifeTime { get => lifeTime; private set => lifeTime = value; }
 }

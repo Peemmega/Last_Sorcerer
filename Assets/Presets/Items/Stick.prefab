@@ -155,7 +155,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c0c3ab724832b66468f0bbc701085624, type: 2}
+  - {fileID: 2100000, guid: f69a0be11d372224aafaf8a2b370db9f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -176,7 +176,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8ec4f263e8f88984caa8520c366ed007, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d23aacb605f0b1645aed828b779403b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -200,7 +200,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 476205d622f4e0543ba4284f7598786c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -357,10 +357,9 @@ GameObject:
   - component: {fileID: 2335747137811821488}
   - component: {fileID: 1149792817775479449}
   - component: {fileID: 2718769758786404484}
-  - component: {fileID: 3182941788264293095}
   - component: {fileID: 3705576898118664825}
   m_Layer: 8
-  m_Name: Sensu Bean
+  m_Name: Stick
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -464,19 +463,6 @@ MonoBehaviour:
   lockX: 0
   lockY: 0
   lockZ: 1
---- !u!114 &3182941788264293095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5754145312274127927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1be11d1b1d133a641b4fe4c1e0750b73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HealValue: 15
 --- !u!114 &3705576898118664825
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private Vector3 moveTo;
     private Vector3 scale = Vector3.one;
+    private Transform _hand;
 
     private const string IS_WALK_PARAM = "IsWalk";
     void Awake()
@@ -31,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     {
         player = GetComponent<PlayerStats>();
         rb = GetComponent<Rigidbody>();
-       
+        _hand = FindObjectOfType<PlayerAction>().transform.Find("ItemHand").transform;
     }
 
     void Update()
@@ -50,11 +52,15 @@ public class PlayerMovement : MonoBehaviour
         if (mouseDirection.x != 0 && mouseDirection.x > 0)
         {
             playerSprite.transform.localScale = new Vector3(-scale.x, scale.y, scale.z);
+            _hand.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
+            _hand.localPosition = new Vector3(0.53f, -0.197f, -1);
         }
 
         if (mouseDirection.x != 0 && mouseDirection.x < 0)
         {
             playerSprite.transform.localScale = new Vector3(scale.x, scale.y, scale.z);
+            _hand.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            _hand.localPosition = new Vector3(-0.53f, -0.197f, -1);
         }
     }
 

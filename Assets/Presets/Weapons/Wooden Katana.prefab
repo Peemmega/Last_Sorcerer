@@ -176,7 +176,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e7d6ee3f6c427da41a6b889c9a001c45, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5bfdb8622a0d256439f23d2a8e7ccde9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 6489040224824723037}
   - component: {fileID: 6594181780909041068}
   m_Layer: 8
-  m_Name: Katana
+  m_Name: Wooden Katana
   m_TagString: MeleeWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 651f04cedb5d71246b9647267f3fcf4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 68b54d081418d8245a0c9d771b89440c, type: 2}
+  data: {fileID: 11400000, guid: 1cc4d7b27dcd6874db3fd2fc7e87097c, type: 2}
 --- !u!114 &6594181780909041068
 MonoBehaviour:
   m_ObjectHideFlags: 0

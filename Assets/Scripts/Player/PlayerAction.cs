@@ -135,9 +135,10 @@ public class PlayerAction : MonoBehaviour
         } else
         {
             GameObject hitbox = Instantiate(Inventory[0].transform.GetComponent<MeleeWeapon>().GetHitbox());
-            cdTimer = Inventory[0].transform.GetComponent<MeleeWeapon>().cd;
+            cdTimer = Inventory[0].transform.GetComponent<MeleeWeapon>().GetCD();
+            hitbox.GetComponent<DealDamage>().weaponData = Inventory[0].transform.GetComponent<MeleeWeapon>().data;
             SetHitboxPos(hitbox);
-            Destroy(hitbox, 0.05f);
+            Destroy(hitbox, Inventory[0].transform.GetComponent<MeleeWeapon>().GetHitboxLifeTime());
         }
 
         combo++;

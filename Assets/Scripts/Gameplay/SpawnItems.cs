@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
+using UnityEngine.SocialPlatforms;
+using static UnityEditor.Progress;
 
 public class SpawnItems : MonoBehaviour
 {
@@ -32,6 +35,28 @@ public class SpawnItems : MonoBehaviour
         Instantiate(item, tran.position , Quaternion.identity, GameObject.Find("Items").transform);
     }
 
+    static GameObject RandomItem(List<RateDrop> items)
+    {
+        float counter = 0;
+        
+        foreach (var i in items)
+        {
+            counter += i.rate;
+        }
+
+        float chosen = UnityEngine.Random.Range(0, counter);
+
+        foreach (var i in items)
+        {
+            counter -= i.rate;
+            if (chosen > counter)
+            {
+                return i.item;
+            } 
+        }
+        return null;
+    }
+
     public void SpawnItemsOnWave() { 
         foreach (var pos in spawnPos)
         {
@@ -44,12 +69,15 @@ public class SpawnItems : MonoBehaviour
             else if (pos.name == "Shrine")
                 preset = 3;
 
-            GameObject item = spawnLists[preset].items[UnityEngine.Random.Range(0, (spawnLists[preset].items.Count - 1))].item;
-            float rate = spawnLists[preset].items[UnityEngine.Random.Range(0, (spawnLists[preset].items.Count - 1))].rate;
+            GameObject item = RandomItem(spawnLists[preset].items);
 
-            if (UnityEngine.Random.Range(0, 100) <= rate)
+            if (item)
             {
+                Debug.Log(item.name);
                 SpawnItem(item, pos.transform);
+            } else
+            {
+                Debug.Log("Nothing");
             }
         }
     }

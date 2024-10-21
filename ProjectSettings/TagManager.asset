@@ -12,6 +12,8 @@ TagManager:
   - CharacterOnScene
   - MeleeWeapon
   - EnemySpawner
+  - Map
+  - Barrier
   layers:
   - Default
   - TransparentFX
