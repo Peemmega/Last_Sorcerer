@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 6594181780909041068}
   m_Layer: 8
   m_Name: Bow
-  m_TagString: MeleeWeapon
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

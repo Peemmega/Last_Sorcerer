@@ -53,14 +53,14 @@ public class PlayerMovement : MonoBehaviour
         {
             playerSprite.transform.localScale = new Vector3(-scale.x, scale.y, scale.z);
             _hand.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
-            _hand.localPosition = new Vector3(0.53f, -0.197f, -1);
+            _hand.localPosition = new Vector3(0.53f, -0.197f, -0.1f);
         }
 
         if (mouseDirection.x != 0 && mouseDirection.x < 0)
         {
             playerSprite.transform.localScale = new Vector3(scale.x, scale.y, scale.z);
             _hand.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-            _hand.localPosition = new Vector3(-0.53f, -0.197f, -1);
+            _hand.localPosition = new Vector3(-0.53f, -0.197f, -0.1f);
         }
     }
 

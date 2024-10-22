@@ -63,7 +63,8 @@ public class PlayerAction : MonoBehaviour
             MouseDirection = (mouseWorldPosition - transform.position).normalized;
         }
 
-        if (Input.GetMouseButtonDown(0) && selectedSlot == 0){
+        if (Input.GetMouseButtonDown(0) && (selectedSlot == 0 || (Inventory[selectedSlot] != null && Inventory[selectedSlot].GetComponent<MeleeWeapon>())))
+        {
             Attack();
         }
 
@@ -127,18 +128,18 @@ public class PlayerAction : MonoBehaviour
 
         transform.GetComponent<PlayerStats>().TakeSTA(5);
 
-        if (Inventory[0] == null) {
+        if (Inventory[0] == null && selectedSlot == 0) {
             GameObject hitbox = Instantiate(fistHitbox);
             cdTimer = .2f;
             SetHitboxPos(hitbox);
             Destroy(hitbox, 0.05f);
         } else
         {
-            GameObject hitbox = Instantiate(Inventory[0].transform.GetComponent<MeleeWeapon>().GetHitbox());
-            cdTimer = Inventory[0].transform.GetComponent<MeleeWeapon>().GetCD();
-            hitbox.GetComponent<DealDamage>().weaponData = Inventory[0].transform.GetComponent<MeleeWeapon>().data;
+            GameObject hitbox = Instantiate(Inventory[selectedSlot].transform.GetComponent<MeleeWeapon>().GetHitbox());
+            cdTimer = Inventory[selectedSlot].transform.GetComponent<MeleeWeapon>().GetCD();
+            hitbox.GetComponent<DealDamage>().weaponData = Inventory[selectedSlot].transform.GetComponent<MeleeWeapon>().data;
             SetHitboxPos(hitbox);
-            Destroy(hitbox, Inventory[0].transform.GetComponent<MeleeWeapon>().GetHitboxLifeTime());
+            Destroy(hitbox, Inventory[selectedSlot].transform.GetComponent<MeleeWeapon>().GetHitboxLifeTime());
         }
 
         combo++;

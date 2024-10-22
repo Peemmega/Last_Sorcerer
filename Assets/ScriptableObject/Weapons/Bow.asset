@@ -15,6 +15,6 @@ MonoBehaviour:
   icon: {fileID: 0}
   weaponPrefab: {fileID: 653323244208137620, guid: 6f1a88fd1dcfa1041a339a48ecfdfcbe,
     type: 3}
-  damage: 9
+  damage: 7
   cd: 0.3
   lifeTime: 1

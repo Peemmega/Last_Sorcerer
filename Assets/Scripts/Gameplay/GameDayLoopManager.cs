@@ -50,8 +50,12 @@ public class GameDayLoopManager : MonoBehaviour
     public DayNightCycle daynight;
     public float dayLerpSpeed;
 
+    [Header("Audio")]
+    BGM_Manager BgmManager;
+
     void Start()
     {
+        BgmManager = FindFirstObjectByType<BGM_Manager>();
         watchTime = dayTimeDuration;
         spawnItems.SpawnItemsOnWave();
     }
@@ -79,6 +83,7 @@ public class GameDayLoopManager : MonoBehaviour
             if (watchTime <= 0)
             {
                 onRaid = !onRaid;
+                //BgmManager.Swap();
                 watchTime = dayTimeDuration;
             }
         } else
@@ -92,6 +97,7 @@ public class GameDayLoopManager : MonoBehaviour
                 if (onSpawn == false && enemiesAlive == 0)
                 {
                     onRaid = !onRaid;
+                    //BgmManager.Swap();
                     currentDayCount++;
                     spawnItems.SpawnItemsOnWave();
                     Debug.Log("Day Clear");

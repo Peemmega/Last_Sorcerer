@@ -32,6 +32,7 @@ public class EnemyStats : MonoBehaviour
     public Color damageColor = new Color(1, 0, 0, 1); // What the color of the damage flash should be.
     public float damageFlashDuration = 0.2f; // How long the flash should last.
     public float deathFadeTime = 0.6f; // How much time it takes for the enemy to fade.
+    public GameObject showTextPrefab;
     Color originalColor;
     SpriteRenderer sr;
     EnemyMovement movement;
@@ -206,6 +207,10 @@ public class EnemyStats : MonoBehaviour
         DashSpeed = 0;
         currentHealth -= dmg;
         StartCoroutine(DamageFlash());
+        if (showTextPrefab)
+        {
+            ShowDMGText(transform.gameObject, dmg);
+        }
 
         // Apply knockback if it is not zero.
         if (knockbackForce > 0)
@@ -221,6 +226,19 @@ public class EnemyStats : MonoBehaviour
             Kill();
         }
     }
+
+    private void ShowDMGText(GameObject hit, float dmg)
+    {
+        GameObject floatingtext = ObjectPool.instance.GetPooledObject();
+
+        if (floatingtext != null)
+        {
+            floatingtext.transform.position = hit.transform.position;
+            floatingtext.GetComponent<TextMesh>().text = dmg.ToString();
+            floatingtext.gameObject.SetActive(true);
+        }
+    }
+
     IEnumerator Dash(float spd,float duration)
     {
         DashSpeed = spd;

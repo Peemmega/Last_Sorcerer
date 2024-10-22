@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DealDamage : MonoBehaviour
 {
-    public GameObject showTextPrefab;
     public WeaponScriptableObject weaponData;
     float Damage = 0;
    
@@ -28,22 +27,8 @@ public class DealDamage : MonoBehaviour
         {
             EnemyStats enemy = hit.GetComponent<EnemyStats>();
             enemy.TakeDamage(Damage, transform.position);
-
-            if (showTextPrefab)
-            {
-                ShowDMGText(hit.gameObject,Damage);
-            }
         }
     }
 
-    private void ShowDMGText(GameObject hit, float dmg)
-    {
-        GameObject floatingtext = ObjectPool.instance.GetPooledObject();
-
-        if (floatingtext != null) {
-            floatingtext.transform.position = hit.transform.position;
-            floatingtext.GetComponent<TextMesh>().text = dmg.ToString();
-            floatingtext.gameObject.SetActive(true);
-        }
-    }
+   
 }

@@ -11,20 +11,11 @@ public class EnemyDealDamage : MonoBehaviour
     void Start()
     {
         Damage = enemyData.Damage;
-
-        //SFX
-        GameObject sfx = new GameObject("sfx");
-        sfx.transform.parent = GameObject.Find("SFX").transform;
-        sfx.AddComponent<AudioSource>();
-        sfx.GetComponent<AudioSource>().clip = this.GetComponent<AudioSource>().clip;
-        sfx.GetComponent<AudioSource>().pitch = Random.Range(0.7f, 1.3f);
-        sfx.GetComponent<AudioSource>().Play();
-        Destroy(sfx, .5f);
     }
 
     private void OnTriggerEnter(Collider hit)
     {
-        Debug.Log(hit.GetComponent<BaseSystem>());
+        //Debug.Log(hit.GetComponent<BaseSystem>());
         if (hit.GetComponent<PlayerStats>())
         {
             PlayerStats player = hit.GetComponent<PlayerStats>();
