@@ -19,7 +19,7 @@ public class MouseDetect : MonoBehaviour
         bool targetItem = Physics.Raycast(ray, out hit,100, Mark);
 
         if (targetItem)
-        {
+        {                   
             GameObject infoUI = hit.transform.Find("infoUI").gameObject;
             if (infoUI != null)
             {

@@ -16,7 +16,7 @@ public class PlayerAction : MonoBehaviour
     public GameObject fistHitbox;
     public GameObject[] Inventory = new GameObject[5];
 
-    public GameObject itemSlotUI;
+    [SerializeField]
     public GameObject[] invSlots = new GameObject[5];
     int selectedSlot = 0;
     Sprite FistIcon;
@@ -33,12 +33,12 @@ public class PlayerAction : MonoBehaviour
         ItemHand = player.transform.Find("ItemHand").gameObject; 
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
-        invSlots[0] = itemSlotUI.transform.Find("MeleeWeapon").gameObject;
+/*        invSlots[0] = itemSlotUI.transform.Find("MeleeWeapon").gameObject;
         invSlots[1] = itemSlotUI.transform.Find("Inventory1").gameObject;
         invSlots[2] = itemSlotUI.transform.Find("Inventory2").gameObject;
         invSlots[3] = itemSlotUI.transform.Find("Inventory3").gameObject;
         invSlots[4] = itemSlotUI.transform.Find("Inventory4").gameObject;
-
+*/
         FistIcon = invSlots[0].transform.Find("Icon").GetComponent<Image>().sprite;
         SelectSlot(0);
     }
@@ -168,12 +168,12 @@ public class PlayerAction : MonoBehaviour
         selectedSlot = slot;
         ChangeActive(true);
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 1; i < 5; i++)
         {
             GameObject currentSlot = invSlots[i];
             Image itemImage = currentSlot.GetComponent<Image>();
 
-            itemImage.color = new Color32(66, 66, 66, 255);
+            itemImage.color = new Color32(192, 185, 158, 255);
             if (i == slot)
             {
                 itemImage.color = new Color32(255, 255, 255, 255);

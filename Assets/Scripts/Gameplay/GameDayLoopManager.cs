@@ -83,7 +83,7 @@ public class GameDayLoopManager : MonoBehaviour
             if (watchTime <= 0)
             {
                 onRaid = !onRaid;
-                //BgmManager.Swap();
+                BgmManager.Swap();
                 watchTime = dayTimeDuration;
             }
         } else
@@ -97,7 +97,7 @@ public class GameDayLoopManager : MonoBehaviour
                 if (onSpawn == false && enemiesAlive == 0)
                 {
                     onRaid = !onRaid;
-                    //BgmManager.Swap();
+                    BgmManager.Swap();
                     currentDayCount++;
                     spawnItems.SpawnItemsOnWave();
                     Debug.Log("Day Clear");
