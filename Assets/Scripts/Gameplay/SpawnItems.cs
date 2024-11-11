@@ -73,11 +73,11 @@ public class SpawnItems : MonoBehaviour
 
             if (item)
             {
-                Debug.Log(item.name);
+               // Debug.Log(item.name);
                 SpawnItem(item, pos.transform);
             } else
             {
-                Debug.Log("Nothing");
+                //Debug.Log("Nothing");
             }
         }
     }

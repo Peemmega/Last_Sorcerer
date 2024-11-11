@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -45,6 +46,9 @@ public class EnemyStats : MonoBehaviour
     public bool onCharging;
     public float DashSpeed;
 
+    [Header("Animation")]
+    public Animator animator;
+
     void Awake()
     {
         spawnPos = transform.position;
@@ -56,6 +60,7 @@ public class EnemyStats : MonoBehaviour
     {
         movement = GetComponent<EnemyMovement>();
         audioSource = GetComponent<AudioSource>();
+        animator = transform.Find("Image").GetComponent<Animator>();
         audioSource.clip = null;
         nameUI.text = transform.name;
 
@@ -106,7 +111,7 @@ public class EnemyStats : MonoBehaviour
             isAttackCD = false;
         }
 
-        hpBar.localScale = new Vector2(currentHealth / enemyData.MaxHealth, 1);
+        hpBar.localScale = new Vector2(math.clamp(currentHealth / enemyData.MaxHealth,0,1), 1);
         Transform playerbase = movement.GetPlayerBase();
         Transform target = movement.target;
 
@@ -116,7 +121,7 @@ public class EnemyStats : MonoBehaviour
         // ATK
         if ((!isAttackCD))
         {
-            if (!(((target == player) && (distance > currentAtkRange)) || ((target == playerbase) && (basedistance > 2.2 && basedistance > currentAtkRange))))
+            if (!(((target != playerbase) && (distance > currentAtkRange)) || ((target == playerbase) && (basedistance > 2.2 && basedistance > currentAtkRange))))
             {
                 Attack(target);
             }
@@ -133,33 +138,23 @@ public class EnemyStats : MonoBehaviour
     IEnumerator DoDamage(Transform target)
     {
         onCharging = true;
-        if (target == player)
+        Destroy(Instantiate(chargeAlretFX, transform.position, Quaternion.identity, transform), 1f);
+
+        /*if (target == player)
         {
             Destroy(Instantiate(chargeAlretFX, transform.position, Quaternion.identity, transform), 1f);
-        }
+        }*/
+
+        animator.SetBool("Attack", onCharging);
         yield return new WaitForSeconds(currentChargeDuration);
         onCharging = false;
+        animator.SetBool("Attack", onCharging);
 
-        /* if (target.gameObject.GetComponent<PlayerStats>())
-         {
-             GameObject hitbox = Instantiate(currentHitbox);
-             SetHitboxPos(hitbox, target);
-             Destroy(hitbox, currentHitboxDuration);
-         }
-         else if (target.gameObject.GetComponent<BaseSystem>())
-         {
-             GameObject hitbox = Instantiate(currentHitbox);
-             SetHitboxPos(hitbox, target);
-             Destroy(hitbox, currentHitboxDuration);
-
-             *//*BaseSystem baseSystem = target.gameObject.GetComponent<BaseSystem>();
-             baseSystem.TakeDamage(currentDamage);*//*
-         }*/
         if (currentHealth > 0)
         {
             GameObject hitbox = Instantiate(currentHitbox);
-            SetHitboxPos(hitbox, target);
             Destroy(hitbox, currentHitboxDuration);
+            SetHitboxPos(hitbox, target);
         }
     }
     void SetHitboxPos(GameObject hitbox, Transform target)
@@ -167,15 +162,22 @@ public class EnemyStats : MonoBehaviour
         hitbox.GetComponent<EnemyDealDamage>().enemyData = enemyData;
         hitbox.GetComponent<EnemyDealDamage>().enemyStats = this;
 
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 dropDirection = (mousePos - transform.position).normalized;
-
         if (currentClass == "Normal" || currentClass == "Tank")
         {
-            if (target.name == "PlayerBase")
+            if (target.tag == "Base" || target.tag == "Shinigami")
             {
-                target.GetComponent<BaseSystem>().TakeDamage(enemyData.Damage);
-                hitbox.transform.position = target.position;
+                Destroy(hitbox);
+
+                if (target.GetComponent<BaseSystem>())
+                {
+                    target.GetComponent<BaseSystem>().TakeDamage(enemyData.Damage);
+                }
+                else if (target.GetComponent<ShinigamiAI>())
+                {
+                    target.GetComponent<ShinigamiAI>().TakeDamage(enemyData.Damage);
+                }
+                /*hitbox.transform.parent = target.transform;
+                hitbox.transform.position = Vector3.zero;*/
             }
             else
             {
@@ -190,11 +192,14 @@ public class EnemyStats : MonoBehaviour
             hitbox.transform.parent = transform;
             hitbox.transform.localPosition = Vector3.zero;
             StartCoroutine(Dash(25, 0.3f));
-        }   
+        }
 
-        hitbox.transform.LookAt(target.position, transform.position);
-        var r = hitbox.transform.eulerAngles;
-        hitbox.transform.rotation = Quaternion.Euler(0, r.y, 0);
+        if (!(target.tag == "Base" || target.tag == "Shinigami" && currentClass != "Ranger"))
+        {
+            hitbox.transform.LookAt(target.position, transform.position);
+            var r = hitbox.transform.eulerAngles;
+            hitbox.transform.rotation = Quaternion.Euler(0, r.y, 0);
+        }
     }
 
     public void TakeDamage(float dmg, Vector3 sourcePosition, float knockbackForce = 3f, float knockbackDuration = 0.1f)
@@ -279,30 +284,9 @@ public class EnemyStats : MonoBehaviour
         Destroy(gameObject);
     }
 
-
-    void OnCollisionStay2D(Collision2D col)
-    {
-        if (col.gameObject.CompareTag("Player"))
-        {
-            PlayerStats player = col.gameObject.GetComponent<PlayerStats>();
-            player.TakeDamage(currentDamage); 
-        }
-    }
     private void OnDestroy()
     {
         GameDayLoopManager es = FindObjectOfType<GameDayLoopManager>();
         if (es) es.OnEnemyKilled();
     }
-
-    /* private void OnDestroy()
-     {
-         EnemySpawner es = FindObjectOfType<EnemySpawner>();
-         if (es) es.OnEnemyKilled();
-     }
-
-     void ReturnEnemy()
-     {
-         EnemySpawner es = FindObjectOfType<EnemySpawner>();
-         transform.position = player.position + es.relativeSpawnPoints[Random.Range(0, es.relativeSpawnPoints.Count)].position;
-     }*/
 }

@@ -32,7 +32,7 @@ public class ArrowBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider hit)
     {
-        if (!(hit.tag == "Player" || hit.tag == "Barrier" || hit.tag == "Item" || hit.tag == "MeleeWeapon"))
+        if (!(hit.tag == "Player" || hit.tag == "Barrier" || hit.tag == "Item" || hit.tag == "Shinigami" || hit.tag == "MeleeWeapon"))
         {
             Destroy(gameObject);
         }

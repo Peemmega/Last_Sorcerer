@@ -15,10 +15,10 @@ public class MouseDetect : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(mousePos);
         
         RaycastHit hit;
-        LayerMask Mark = LayerMask.GetMask("Enemy","Item"); 
+        LayerMask Mark = LayerMask.GetMask("Enemy", "Item", "LivingThing"); 
         bool targetItem = Physics.Raycast(ray, out hit,100, Mark);
 
-        if (targetItem)
+        if (targetItem && hit.transform.Find("infoUI"))
         {                   
             GameObject infoUI = hit.transform.Find("infoUI").gameObject;
             if (infoUI != null)
@@ -32,7 +32,7 @@ public class MouseDetect : MonoBehaviour
                 lastTarget = hit.transform.gameObject;
 
                 PickUpController pickUpController = lastTarget.GetComponent<PickUpController>();
-                if (hit.transform.tag == "Monster")
+                if (hit.transform.tag == "Monster" || hit.transform.tag == "Shinigami")
                 {
                     infoUI.SetActive(true);
                 } else

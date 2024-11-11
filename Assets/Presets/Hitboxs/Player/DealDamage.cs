@@ -18,7 +18,7 @@ public class DealDamage : MonoBehaviour
         sfx.GetComponent<AudioSource>().clip = this.GetComponent<AudioSource>().clip;
         sfx.GetComponent<AudioSource>().pitch = Random.Range(0.7f,1.3f);
         sfx.GetComponent<AudioSource>().Play();
-        Destroy(sfx, .5f);
+        Destroy(sfx,3f);
     }
 
     private void OnTriggerEnter(Collider hit)

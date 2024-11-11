@@ -31,12 +31,43 @@ public class EnemyMovement : MonoBehaviour
         _class = enemy.currentClass;
     }
 
+    GameObject FindTarget()
+    {
+        GameObject bestTarget = null;
+        float bestDistance = 999;
+
+        for (int i = 0; i < GameObject.Find("LivingThing").transform.GetChildCount(); i++)
+        {
+            GameObject targeting = GameObject.Find("LivingThing").transform.GetChild(i).gameObject;
+            float Distance = Vector3.Distance(transform.position, targeting.transform.position);
+            if ((Distance <= findTartgetRange && bestDistance > Distance && targeting.tag != "Base"))
+            {
+                if (targeting.tag == "Player")
+                {
+                    return targeting;
+                }
+                bestDistance = Distance;
+                bestTarget = targeting;
+            }
+        }
+       
+        return bestTarget;
+    }
+
     void Update()
     {
-        float playerDistance = Vector3.Distance(transform.position, player.position);
-        if ((playerDistance <= findTartgetRange) || (_class == "Assasin"))
+        GameObject targeting = FindTarget();
+
+        if (targeting != null || (_class == "Assasin"))
         {
-            target = player;
+            if (targeting == null)
+            {
+                target = player.transform;
+            } else
+            {
+                target = targeting.transform;
+            }
+            
         } else 
         { 
             target = playerbase;
@@ -55,7 +86,7 @@ public class EnemyMovement : MonoBehaviour
                 float distance = Vector3.Distance(transform.position, target.position);
                 float basedistance = Vector3.Distance(transform.position, playerbase.position);
 
-                if (((target == player) && (distance > atkRange)) || ((target == playerbase) && (basedistance > 2.2 && basedistance > atkRange)))
+                if (((target != playerbase) && (distance > atkRange)) || ((target == playerbase) && (basedistance > 2.2 && basedistance > atkRange)))
                 {
 
                     transform.position = Vector3.MoveTowards(transform.position, target.transform.position, enemy.currentMoveSpeed * Time.deltaTime);
@@ -77,12 +108,6 @@ public class EnemyMovement : MonoBehaviour
         {
             mobImage.transform.localScale = new Vector3(-scale.x, scale.y, scale.z);
         }
-
-        /*  if (gameObject.name != "Cursed Tree")
-          {
-              transform.localScale = scale;
-          }*/
-
     }
 
     public void Knockback(Vector3 velocity, float duration)

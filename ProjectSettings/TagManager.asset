@@ -15,6 +15,7 @@ TagManager:
   - Map
   - Barrier
   - Bow
+  - Shinigami
   layers:
   - Default
   - TransparentFX

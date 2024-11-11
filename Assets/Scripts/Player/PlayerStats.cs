@@ -1,3 +1,4 @@
+using Microsoft.Unity.VisualStudio.Editor;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -13,10 +14,10 @@ public class PlayerStats : MonoBehaviour
 
     //Current stats
     float currentHealth;
-    float currentRecovery;
     float currentMoveSpeed;
     public float currentSTA;
     float maxSTA;
+    float maxHP;
     float currentMight;
     float currentDef;
     float timescale = 1;
@@ -37,25 +38,6 @@ public class PlayerStats : MonoBehaviour
                 {
                     GameManager.instance.currentHealthDisplay.text = "Health: " + currentHealth;
                 }
-                //Add any additional logic here that needs to be executed when the value changes
-            }
-        }
-    }
-
-    public float CurrentRecovery
-    {
-        get { return currentRecovery; }
-        set
-        {
-            //Check if the value has changed
-            if (currentRecovery != value)
-            {
-                currentRecovery = value;
-                if (GameManager.instance != null)
-                {
-                    GameManager.instance.currentRecoveryDisplay.text = "Recovery: " + currentRecovery;
-                }
-                //Update the real time value of the stat
                 //Add any additional logic here that needs to be executed when the value changes
             }
         }
@@ -133,6 +115,8 @@ public class PlayerStats : MonoBehaviour
     TextMeshProUGUI staminaText;
     TextMeshProUGUI healthMaxText;
     TextMeshProUGUI staminaMaxText;
+    RectTransform staBar;
+    RectTransform hpBar;
 
     [Header("SafeZone")]
     public TextMeshProUGUI locateText;
@@ -144,13 +128,13 @@ public class PlayerStats : MonoBehaviour
     {
        
         //Assign the variables
-        CurrentHealth = characterData.MaxHealth;
-        CurrentRecovery = characterData.Recovery;
         CurrentMoveSpeed = characterData.MoveSpeed;
         CurrentMight = characterData.Might;
         CurrentDef = characterData.Def;
         maxSTA = characterData.Stamina; ;
         currentSTA = maxSTA;
+        maxHP = characterData.MaxHealth;
+        CurrentHealth = maxHP;
         //Spawn the starting weapon
         SpawnCharacter(characterData.characterPrefab);
     }
@@ -161,6 +145,8 @@ public class PlayerStats : MonoBehaviour
         healthMaxText = UI.transform.Find("HP").Find("maxHP").GetComponent<TextMeshProUGUI>();
         staminaText = UI.transform.Find("STA").Find("currentSTA").GetComponent<TextMeshProUGUI>();
         staminaMaxText = UI.transform.Find("STA").Find("maxSTA").GetComponent<TextMeshProUGUI>();
+        staBar = UI.transform.Find("StaminaBar").GetComponent<RectTransform>();
+        hpBar = UI.transform.Find("HPBar").GetComponent<RectTransform>();
 
         healthMaxText.text = CurrentHealth.ToString();
         staminaMaxText.text = maxSTA.ToString();
@@ -245,11 +231,14 @@ public class PlayerStats : MonoBehaviour
     {
         //Update the health bar
         healthText.text = CurrentHealth.ToString();
+        hpBar.localScale = new Vector3((CurrentHealth / maxHP) * 1.296431f, 1.219226f, 0);
     }
     void UpdateStaBar()
     {
         //Update the health bar
         staminaText.text = Mathf.Floor(currentSTA).ToString();
+        staBar.localScale = new Vector3((currentSTA / maxSTA) * 1.296431f, 1.199199f, 0);
+
     }
     public void Kill()
     {
@@ -275,23 +264,6 @@ public class PlayerStats : MonoBehaviour
         }
         UpdateHealthBar();
     }
-
-/*    void Recover()
-    {
-
-        if (CurrentHealth < characterData.MaxHealth)
-        {
-            CurrentHealth += CurrentRecovery * Time.deltaTime;
-
-            // Make sure the player's health doesn't exceed their maximum health
-            if (CurrentHealth > characterData.MaxHealth)
-            {
-                CurrentHealth = characterData.MaxHealth;
-            }
-        }
-
-        UpdateHealthBar();
-    }*/
 
     public void SpawnCharacter(GameObject avatar)
     {

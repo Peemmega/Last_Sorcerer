@@ -33,22 +33,10 @@ public class PlayerAction : MonoBehaviour
         ItemHand = player.transform.Find("ItemHand").gameObject; 
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
-/*        invSlots[0] = itemSlotUI.transform.Find("MeleeWeapon").gameObject;
-        invSlots[1] = itemSlotUI.transform.Find("Inventory1").gameObject;
-        invSlots[2] = itemSlotUI.transform.Find("Inventory2").gameObject;
-        invSlots[3] = itemSlotUI.transform.Find("Inventory3").gameObject;
-        invSlots[4] = itemSlotUI.transform.Find("Inventory4").gameObject;
-*/
         FistIcon = invSlots[0].transform.Find("Icon").GetComponent<Image>().sprite;
         SelectSlot(0);
     }
 
-  /*  IEnumerator WaitAndPrint(GameObject test)
-    {
-        yield return new WaitForSeconds(0.3f);
-        
-    }
-*/
     void Update()
     {
         Vector3 mouseScreenPosition = Input.mousePosition;
@@ -114,8 +102,7 @@ public class PlayerAction : MonoBehaviour
             cdTimer -= Time.deltaTime;
         }
 
-        /* if (Input.GetMouseButtonDown(1))
-             Debug.Log("Pressed right-click.");*/
+      
     }
 
     void Attack()
